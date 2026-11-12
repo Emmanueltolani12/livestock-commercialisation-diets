@@ -1,0 +1,13 @@
+# Household-level microdata: never commit
+data/*.dta
+*.dta
+
+# Outputs of a run
+logs/
+plot_data/*.dta
+
+# Editor and R files
+.Rhistory
+.RData
+.Rproj.user/
+~$*

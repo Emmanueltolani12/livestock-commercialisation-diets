@@ -1,0 +1,47 @@
+file,order,panel,group,label,key
+fig04_main_fbdg,1,,,Extensive (IV),f4_ext_iv
+fig04_main_fbdg,2,,,Extensive (OLS),f4_ext_cre
+fig04_main_fbdg,3,,,Intensive (IV),f4_int_iv
+fig04_main_fbdg,4,,,Intensive (OLS),f4_int_cre
+fig05_food_groups,1,Extensive,[A] Fruits,[A] Fruits,f5_ext_Fruits
+fig05_food_groups,2,Extensive,[B] Vegetables,[B] Vegetables,f5_ext_Vegetables
+fig05_food_groups,3,Extensive,[C] Dairy,[C] Dairy,f5_ext_Dairy
+fig05_food_groups,4,Extensive,[D] Legumes,[D] Legumes,f5_ext_Pulses
+fig05_food_groups,5,Extensive,[E] Starch,[E] Starch,f5_ext_Cereals
+fig05_food_groups,6,Extensive,[F] Fish,[F] Fish,f5_ext_Meat_Prod
+fig05_food_groups,7,Intensive\n (TLU),[A] Fruits,[A] Fruits,f5_int_Fruits
+fig05_food_groups,8,Intensive\n (TLU),[B] Vegetables,[B] Vegetables,f5_int_Vegetables
+fig05_food_groups,9,Intensive\n (TLU),[C] Dairy,[C] Dairy,f5_int_Dairy
+fig05_food_groups,10,Intensive\n (TLU),[D] Legumes,[D] Legumes,f5_int_Pulses
+fig05_food_groups,11,Intensive\n (TLU),[E] Starch,[E] Starch,f5_int_Cereals
+fig05_food_groups,12,Intensive\n (TLU),[F] Fish,[F] Fish,f5_int_Meat_Prod
+fig06_species,1,Extensive,Cattle,Cattle,f6_ext_cattle
+fig06_species,2,Extensive,Pig,Pig,f6_ext_pig
+fig06_species,3,Extensive,Small ruminants,Small ruminants,f6_ext_rum
+fig06_species,4,Extensive,Poultry,Poultry,f6_ext_poultry
+fig06_species,5,Intensive (TLU),Cattle,Cattle,f6_int_cattle
+fig06_species,6,Intensive (TLU),Pig,Pig,f6_int_pig
+fig06_species,7,Intensive (TLU),Small ruminants,Small ruminants,f6_int_rum
+fig06_species,8,Intensive (TLU),Poultry,Poultry,f6_int_poultry
+fig07_gender,1,Male Decision Making,,Extensive (IV),f7_male_ext_iv
+fig07_gender,2,Male Decision Making,,Extensive (OLS),f7_male_ext_cre
+fig07_gender,3,Male Decision Making,,Intensive (IV),f7_male_int_iv
+fig07_gender,4,Male Decision Making,,Intensive (OLS),f7_male_int_cre
+fig07_gender,5,Female Decision Making,,Extensive (IV),f7_female_ext_iv
+fig07_gender,6,Female Decision Making,,Extensive (OLS),f7_female_ext_cre
+fig07_gender,7,Female Decision Making,,Intensive (IV),f7_female_int_iv
+fig07_gender,8,Female Decision Making,,Intensive (OLS),f7_female_int_cre
+fig08_pathways,1,Income,,Income (IV),f8_lvinc_iv_fe_year
+fig08_pathways,2,Income,,Income (OLS),f8_lvinc_fe
+fig08_pathways,3,Other,,Cash crops,f8_cash
+fig08_pathways,4,Other,,Food crops,f8_food
+fig08_pathways,5,Other,,Off-farm income,f8_offfarm
+fig08_pathways,6,Other,,Production diversity,f8_proddiv
+fig09_pathways_diets,1,,,Income,f9_income
+fig09_pathways_diets,2,,,Male decision,f9_maledecision
+fig09_pathways_diets,3,,,Off-farm income,f9_offfarm
+fig09_pathways_diets,4,,,Production diversity,f9_proddiv
+fig10_hdds12,1,,,Extensive (IV),f10_iv
+fig10_hdds12,2,,,Extensive (OLS),f10_cre
+fig10_hdds12,3,,,Intensive (IV),f10_int_iv
+fig10_hdds12,4,,,Intensive (OLS),f10_int_cre
