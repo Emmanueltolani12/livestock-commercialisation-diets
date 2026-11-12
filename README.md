@@ -27,7 +27,7 @@ The outputs in `plot_data/`, `figures/`, `tables/` and `logs/` hold estimates an
 - Stata 18 (SE or MP). The one user-written package, `kinkyreg` 1.1.1 (Kripfganz and Kiviet; Figure 11), is bundled in `stata/ado/plus`, so nothing needs installing.
 - R 4.5 with `ggplot2`, `patchwork`, `dplyr`, `tidyr` and `readr`. `00_run_all.do` finds `Rscript` in `C:/Program Files/R`; elsewhere, set the global `RSCRIPT` at the top of the file.
 - **Run time.** The full run took 15 minutes. Almost all of it is `02_regressions.do` (14.7 minutes); `01_descriptives.do` and `03_export_plot_data.do` take a few seconds, and the figures in R about 20 seconds.
-- **Computer used.** 32 GB of RAM (5,600 MT/s), Windows 11 and a 2 TB NVMe SSD. Software: single-core Stata/SE 18 and R 4.5.0.
+- **Computer used.** 32 GB of RAM (5,600 MT/s), Windows 11 and a 2 TB NVMe SSD.
 
 ## How to run
 
