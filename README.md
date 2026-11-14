@@ -68,8 +68,8 @@ Exceptions:
 - **Figure 8, livestock income:** household fixed effects (FE, labelled OLS) and IV-FE, with the controls and a year dummy.
 - **Table S18:** livestock income (column 1) is IV-FE with the controls and a year dummy; the other pathways are IV-CRE.
 - **Figure 9 and Table S9:** one pathway variable per CRE model; total household income enters per 100,000 kwacha (`inc100k`). In the 'Male decision' model the head's sex is not among the controls, because it coincides with the decision-maker's sex for 98% of the observations.
-- **Figure 11:** 2SLS and kinky least squares (`kinkyreg`, postulated endogeneity from −0.75 to 0.75) with the controls and household means, without fixed effects, with non-robust standard errors.
-- **Table 2 and Table S20:** total household income (per 100,000 kwacha, `inc100k`) is added to the controls, without its household mean.
+- **Figure 11:** 2SLS and kinky least squares (`kinkyreg`, postulated endogeneity from −0.75 to 0.75) with the controls and household means.
+- **Table 2 and Table S20:** total household income (per 100,000 kwacha, `inc100k`) is added to the controls.
 - **Table S19:** the LCI models of the HDDS-12 and the FBDG score, for households with a male and with a female main decision-maker.
 - **Table S10:** households that sell both crops and livestock against all others, in the CRE model of Figure 4 without crop market participation among the controls, for the FBDG score and the HDDS-12.
 
