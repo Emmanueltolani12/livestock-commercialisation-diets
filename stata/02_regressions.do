@@ -35,7 +35,7 @@ xtset hhid Panel
 local cl  $CLUSTER
 local CT  $controls $tcontrols
 local FE  i.const i.Panel
-local SEnote Standard errors clustered on `cl'.
+local SEnote Robust standard errors in parentheses.
 global TABLEKEEP tlu_sale tlu_sold cattle_d pig_d rum_d poultry_d cattle pig rum poultry lci ///
                  inc100k Off_Farm_Partic prod_diversity gender_Maindecision_maker ///
                  $controls $tcontrols _cons
@@ -528,7 +528,7 @@ etable, estimates(js_number_food6groupZ js_number_food12group) column(dvlabel) k
     cstat(_r_b, nformat(%9.3f)) cstat(_r_se, nformat(%9.3f)) ///
     showstars showstarsnote stars(.1 "*" .05 "**" .01 "***", attach(_r_b)) mstat(N, nformat(%9.0fc)) ///
     title("Table S10: joint crop and livestock market participation and dietary diversity") ///
-    note("CRE with household means of the controls, constituency and year dummies; crop market participation is not a control. Reference group: households that sell neither, only crops or only livestock. Standard errors clustered on `cl'.")
+    note("CRE with household means of the controls, constituency and year dummies; crop market participation is not a control. Reference group: households that sell neither, only crops or only livestock. Robust standard errors in parentheses.")
 rp_docx "$TABLES/TableS10_joint_strategy.docx"
 
 *------------------------------------------------------------------------------
@@ -644,7 +644,7 @@ forvalues k = 2/7 {
     putdocx table sd(.,`k'), halign(center)
 }
 putdocx paragraph
-putdocx text ("Coefficients of Figure 4 (FBDG score) and Figure 10 (HDDS-12), models with constituency and year dummies (CRE and IV-CRE, labelled OLS and IV in the figures), divided by the standard deviation (SD units) and by the mean (% of mean) of the outcome in the estimation sample of 11,963 household-wave observations. Sold livestock: selling against not selling; TLU sold: one more TLU sold. The two margins are in different units and are not compared with each other. Standard errors clustered on hh in parentheses (in SD units under the SD-unit estimates); *** p<0.01, ** p<0.05, * p<0.1."), italic
+putdocx text ("Coefficients of Figure 4 (FBDG score) and Figure 10 (HDDS-12), models with constituency and year dummies (CRE and IV-CRE, labelled OLS and IV in the figures), divided by the standard deviation (SD units) and by the mean (% of mean) of the outcome in the estimation sample of 11,963 household-wave observations. Sold livestock: selling against not selling; TLU sold: one more TLU sold. The two margins are in different units and are not compared with each other. Robust standard errors in parentheses (in SD units under the SD-unit estimates); *** p<0.01, ** p<0.05, * p<0.1."), italic
 putdocx save "$TABLES/TableS11_estimates_in_sd_units.docx", replace
 
 log close regressions
