@@ -1,7 +1,7 @@
 /*==============================================================================
   02_regressions.do
-  The regressions behind Figures 4-11, Tables 1 and 2, and Supplementary Tables S4-S19
-  (S4-S9 and S12: the full models of Figures 4-10).
+  The regressions behind Figures 4-11, Tables 1 and 2, and Supplementary Tables S4-S20
+  (S4-S9 and S12: the full models of Figures 4-10; S15 and S20: of Tables 1 and 2).
 
   Models (constituency and year dummies in all of them unless stated otherwise):
     CRE     random effects with the household means of the time-varying controls
@@ -15,7 +15,7 @@
   Input : $ANALYSIS_DATA
   Output: $PLOT_DATA/coefficients_all.dta, one row per estimate
           $PLOT_DATA/fig11_kls.csv, the kinky least squares estimates of Figure 11
-          $TABLES/Table1_lci.docx, Table2_lci_income.docx and Tables S4-S9, S12-S19 (Word)
+          $TABLES/Table1_lci.docx, Table2_lci_income.docx and Tables S4-S9, S12-S20 (Word)
           $TABLES/TableS10_joint_strategy.csv and .docx
           $TABLES/TableS11_estimates_in_sd_units.csv and .docx
 ==============================================================================*/
@@ -331,7 +331,7 @@ export delimited order panel endogeneity kls kls_low kls_high iv iv_low iv_high 
 restore
 
 *------------------------------------------------------------------------------
-* I. The livestock commercialisation index (LCI), IV-CRE: Tables 1, 2 and S15 (dietary
+* I. The livestock commercialisation index (LCI), IV-CRE: Tables 1, 2, S15 and S20 (dietary
 *    diversity), S16 and S17 (food groups), S18 (pathways) and S19 (by sex of the main
 *    decision-maker).
 *    LCI = 100 x TLU sold / (TLU sold + TLU owned at the survey): the per cent of the
@@ -343,7 +343,7 @@ generate double lci = cond(tlu_sold == 0, 0, 100 * tlu_sold / (tlu_sold + tlu_to
 label variable lci "Livestock commercialisation index (LCI)"
 local LCInote IV-CRE: LCI instrumented by the leave-one-out share of livestock sellers in the constituency; the controls, their household means, constituency and year dummies.
 
-* Tables 1 and 2, as in the manuscript, and Table S15, the full models of Table 1.
+* Tables 1 and 2, as in the manuscript, and Tables S15 and S20, their full models.
 * Table 2 adds household income (per 100,000 kwacha) to the controls, without its
 * household mean.
 foreach tab in 1 2 {
@@ -381,7 +381,10 @@ foreach tab in 1 2 {
     else {
         model_table Table2_lci_income "`models'" ///
             "Table 2: Livestock commercialisation and dietary diversity after controlling for income" ///
-            "`LCInote' Household income (100,000 kwacha) is added to the controls, without its household mean. `SEnote'" "`depvars'" "lci _cons"
+            "`LCInote' Household income (100,000 kwacha) is added to the controls, without its household mean. Full models in Table S20. `SEnote'" "`depvars'" "lci _cons"
+        model_table TableS20_lci_income_full "`models'" ///
+            "Table S20: Livestock commercialisation and dietary diversity after controlling for income" ///
+            "`LCInote' Household income (100,000 kwacha) is added to the controls, without its household mean. The models of Table 2. `SEnote'" "`depvars'"
     }
 }
 

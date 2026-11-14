@@ -7,7 +7,7 @@
   tables:
 
     stata/01_descriptives.do       Figures 2 and 3, Tables S1, S2 and S3
-    stata/02_regressions.do        Figures 4-11, Tables 1, 2 and S4-S19
+    stata/02_regressions.do        Figures 4-11, Tables 1, 2 and S4-S20
     stata/03_export_plot_data.do   coefficients and 95% intervals for the figures
     R/01_run_all_figures.R         draws Figures 2-11
 

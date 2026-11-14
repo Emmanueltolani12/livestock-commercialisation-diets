@@ -3,7 +3,7 @@
 **Smallholder Livestock Commercialisation and Dietary Diversity: Panel Data Evidence from Zambia**
 Martin Paul Jr. Tabe-Ojong, Emmanuel Tolani, Abebayehu G. Geffersa
 
-This package runs the analysis of the paper from the cleaned data: the regressions and the data behind Figures 2–11, the figures themselves, Tables 1 and 2, and Tables S1–S19 of the Supplementary Information. One command runs everything.
+This package runs the analysis of the paper from the cleaned data: the regressions and the data behind Figures 2–11, the figures themselves, Tables 1 and 2, and Tables S1–S20 of the Supplementary Information. One command runs everything.
 
 ## Data availability
 
@@ -42,7 +42,7 @@ This runs, in order:
 | Step | File | What it does |
 |---|---|---|
 | 1 | `stata/01_descriptives.do` | Data behind Figures 2 and 3; Tables S1, S2 and S3 |
-| 2 | `stata/02_regressions.do` | All regressions: Figures 4–11, Tables 1, 2 and S4–S19 |
+| 2 | `stata/02_regressions.do` | All regressions: Figures 4–11, Tables 1, 2 and S4–S20 |
 | 3 | `stata/03_export_plot_data.do` | The coefficients and 95% intervals of Figures 4–10, one CSV per figure; all estimates in `coefficients_all.csv` and `all_estimates.xlsx` |
 | 4 | `R/01_run_all_figures.R` | Draws Figures 2–11 from `plot_data/` |
 
@@ -55,7 +55,7 @@ Rscript --vanilla R/01_run_all_figures.R
 ## Models
 
 - **Outcomes.** The FBDG score: the number of the six food groups of Zambia's Food-Based Dietary Guidelines the household consumed (`number_food6groupZ`, 0–6). The household dietary diversity score with 12 groups (HDDS-12, `number_food12group`), and with 9 groups in Tables 1, 2 and S15 (HDDS-9, `number_food9groupH`). The six FBDG groups one by one in Figure 5 and Table S17, the twelve HDDS-12 groups in Table S16.
-- **Livestock commercialisation.** Extensive margin: sold livestock (1/0, `tlu_sale`). Intensive margin: livestock sold in tropical livestock units (TLU, `tlu_sold`). In Tables 1, 2 and S15–S19, the livestock commercialisation index, LCI = 100 × TLU sold / (TLU sold + TLU owned at the survey), the per cent of the herd before the sales that was sold; it is instrumented by `tlu_sale_mean` like the other treatments.
+- **Livestock commercialisation.** Extensive margin: sold livestock (1/0, `tlu_sale`). Intensive margin: livestock sold in tropical livestock units (TLU, `tlu_sold`). In Tables 1, 2 and S15–S20, the livestock commercialisation index, LCI = 100 × TLU sold / (TLU sold + TLU owned at the survey), the per cent of the herd before the sales that was sold; it is instrumented by `tlu_sale_mean` like the other treatments.
 - **CRE** (labelled OLS in the figures): random-effects model with the controls, the household means of the time-varying controls (Mundlak), and constituency and year dummies (`xtreg, re`).
 - **IV-CRE** (labelled IV in the figures): the same model with livestock commercialisation instrumented by `tlu_sale_mean`, the leave-one-out share of livestock sellers in the household's constituency, 2015 and 2019 pooled (`xtivreg, re`).
 - **Controls.** The head's sex, education and age, household size, access to credit, cultivated land, land owned, crop market participation, FISP participation, drought, floods, pests and diseases, other shocks and the asset index.
@@ -69,7 +69,7 @@ Exceptions:
 - **Table S18:** livestock income (column 1) is IV-FE with the controls and a year dummy; the other pathways are IV-CRE.
 - **Figure 9 and Table S9:** one pathway variable per CRE model; total household income enters per 100,000 kwacha (`inc100k`). In the 'Male decision' model the head's sex is not among the controls, because it coincides with the decision-maker's sex for 98% of the observations.
 - **Figure 11:** 2SLS and kinky least squares (`kinkyreg`, postulated endogeneity from −0.75 to 0.75) with the controls and household means, without fixed effects, with non-robust standard errors.
-- **Table 2:** total household income (per 100,000 kwacha, `inc100k`) is added to the controls, without its household mean.
+- **Table 2 and Table S20:** total household income (per 100,000 kwacha, `inc100k`) is added to the controls, without its household mean.
 - **Table S19:** the LCI models of the HDDS-12 and the FBDG score, for households with a male and with a female main decision-maker.
 - **Table S10:** households that sell both crops and livestock against all others, in the CRE model of Figure 4 without crop market participation among the controls, for the FBDG score and the HDDS-12.
 
@@ -108,10 +108,11 @@ Exceptions:
 | Table S17 | block I | `tables/TableS17_lci_fbdg_food_groups.docx` |
 | Table S18 | block I | `tables/TableS18_lci_pathways.docx` |
 | Table S19 | block I | `tables/TableS19_lci_decision_maker_sex.docx` |
+| Table S20 | block I | `tables/TableS20_lci_income_full.docx` (full models of Table 2) |
 
 - **Figures** are in `figures/` as PDF, PNG (300 dpi) and TIFF (600 dpi), one R script each in `R/` with the same name; `R/00_setup.R` holds the shared theme and plot functions.
 - **Figure data** are in `plot_data/`, with the same names: for Figures 4–10, one row per bar or point with the estimate, standard error, 95% interval, p-value, stars, observations and clusters. `stata/figure_map.csv` says which estimate goes where and under which label.
-- **All estimates** behind Figures 4–11 and Tables 1, 2, S4–S9 and S12–S19, one row per model, are in `plot_data/coefficients_all.csv` and `tables/all_estimates.xlsx`; those of Tables S3, S10 and S11 are in the CSV files beside their Word tables.
+- **All estimates** behind Figures 4–11 and Tables 1, 2, S4–S9 and S12–S20, one row per model, are in `plot_data/coefficients_all.csv` and `tables/all_estimates.xlsx`; those of Tables S3, S10 and S11 are in the CSV files beside their Word tables.
 - **Logs** of the last run are in `logs/`.
 
 Labels in the figures: 'Fish' in Figure 5 and 'Meat' in Figure 3 are the FBDG group of meat, eggs and fish; 'Income' in Figures 8 and 11 is livestock sales revenue, and in Figure 9 total household income per 100,000 kwacha; 'Off-farm income' in Figures 8, 9 and 11 is off-farm participation (1/0).
@@ -125,7 +126,7 @@ stata/                 01-03 do-files, figure_map.csv, ado/ (table helpers and k
 R/                     00_setup.R, 01_run_all_figures.R and one script per figure
 plot_data/             coefficients and 95% intervals for the figures (no microdata)
 figures/               Figures 2-11
-tables/                Tables 1, 2 and S1-S19, all_estimates.xlsx
+tables/                Tables 1, 2 and S1-S20, all_estimates.xlsx
 logs/                  logs of the last run
 ```
 
