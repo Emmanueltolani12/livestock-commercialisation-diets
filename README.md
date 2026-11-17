@@ -67,7 +67,7 @@ Exceptions:
 - **Figure 7:** the models of Figure 4, for households with a male and with a female main decision-maker.
 - **Figure 8, livestock income:** household fixed effects (FE, labelled OLS) and IV-FE, with the controls and a year dummy.
 - **Table S18:** livestock income (column 1) is IV-FE with the controls and a year dummy; the other pathways are IV-CRE.
-- **Figure 9 and Table S9:** one pathway variable per CRE model; total household income enters per 100,000 kwacha (`inc100k`). In the 'Male decision' model the head's sex is not among the controls, because it coincides with the decision-maker's sex for 98% of the observations.
+- **Figure 9 and Table S9:** one pathway variable per CRE model; livestock income (livestock sales revenue, as in Figure 8) enters as log(1 + kwacha). In the 'Male decision' model the head's sex is not among the controls, because it coincides with the decision-maker's sex for 98% of the observations.
 - **Figure 11:** 2SLS and kinky least squares (`kinkyreg`, postulated endogeneity from −0.75 to 0.75) with the controls and household means.
 - **Table 2 and Table S20:** total household income (per 100,000 kwacha, `inc100k`) is added to the controls.
 - **Table S19:** the LCI models of the HDDS-12 and the FBDG score, for households with a male and with a female main decision-maker.
@@ -115,7 +115,7 @@ Exceptions:
 - **All estimates** behind Figures 4–11 and Tables 1, 2, S4–S9 and S12–S20, one row per model, are in `plot_data/coefficients_all.csv` and `tables/all_estimates.xlsx`; those of Tables S3, S10 and S11 are in the CSV files beside their Word tables.
 - **Logs** of the last run are in `logs/`.
 
-Labels in the figures: 'Fish' in Figure 5 and 'Meat' in Figure 3 are the FBDG group of meat, eggs and fish; 'Income' in Figures 8 and 11 is livestock sales revenue, and in Figure 9 total household income per 100,000 kwacha; 'Off-farm income' in Figures 8, 9 and 11 is off-farm participation (1/0).
+Labels in the figures: 'Fish' in Figure 5 and 'Meat' in Figure 3 are the FBDG group of meat, eggs and fish; 'Income' in Figures 8, 9 and 11 is livestock sales revenue (in Figure 9 as log(1 + kwacha)); 'Off-farm income' in Figures 8, 9 and 11 is off-farm participation (1/0).
 
 ## Folder layout
 

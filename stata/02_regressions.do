@@ -37,7 +37,7 @@ local CT  $controls $tcontrols
 local FE  i.const i.Panel
 local SEnote Robust standard errors in parentheses.
 global TABLEKEEP tlu_sale tlu_sold cattle_d pig_d rum_d poultry_d cattle pig rum poultry lci ///
-                 inc100k Off_Farm_Partic prod_diversity gender_Maindecision_maker ///
+                 lnlvinc inc100k Off_Farm_Partic prod_diversity gender_Maindecision_maker ///
                  $controls $tcontrols _cons
 
 * One Word table of models. depvars: when outcomes differ between columns, the
@@ -235,16 +235,18 @@ model_table TableS8_fig8_pathways "`models'" ///
 *------------------------------------------------------------------------------
 * F. Figure 9 and Table S9: pathway variables and dietary diversity, CRE, one variable
 *    per model.
-*    Income enters per 100,000 kwacha (inc100k). In the 'Male decision' model the head's
-*    sex is not among the controls, because it coincides with the decision-maker's sex
-*    for 98% of the observations.
+*    Livestock income (livestock sales revenue, as in Figure 8) enters as log(1 + kwacha).
+*    In the 'Male decision' model the head's sex is not among the controls, because it
+*    coincides with the decision-maker's sex for 98% of the observations.
 *------------------------------------------------------------------------------
+generate double lnlvinc = ln(1 + totlv_inc)
+label variable lnlvinc "Livestock income, log(1 + kwacha)"
 local c_all $controls
 local c_sex Sex_HH
 local c_nosex : list c_all - c_sex
 estimates clear
 local models
-foreach triple in "a inc100k income" "b Off_Farm_Partic offfarm" ///
+foreach triple in "a lnlvinc income" "b Off_Farm_Partic offfarm" ///
                   "c prod_diversity proddiv" "d gender_Maindecision_maker maledecision" {
     gettoken id triple : triple
     gettoken x k : triple
@@ -262,7 +264,7 @@ foreach triple in "a inc100k income" "b Off_Farm_Partic offfarm" ///
 }
 model_table TableS9_fig9_pathways_diets "`models'" ///
     "Table S9: Pathways and dietary diversity" ///
-    "Outcome: FBDG score. One pathway variable per column: (1) household income per 100,000 kwacha; (2) off-farm activity; (3) production diversity; (4) male main decision-maker. All columns: CRE, constituency and year dummies; in column (4) the head's sex is not among the controls. The models of Figure 9. `SEnote'" ///
+    "Outcome: FBDG score. One pathway variable per column: (1) livestock income (livestock sales revenue), log(1 + kwacha); (2) off-farm activity; (3) production diversity; (4) male main decision-maker. All columns: CRE, constituency and year dummies; in column (4) the head's sex is not among the controls. The models of Figure 9. `SEnote'" ///
     "number_food6groupZ number_food6groupZ number_food6groupZ number_food6groupZ"
 
 *------------------------------------------------------------------------------

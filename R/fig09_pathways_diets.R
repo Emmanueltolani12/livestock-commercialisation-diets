@@ -1,5 +1,5 @@
-# Figure 9: pathway variables and dietary diversity. 'Income' is total household income per
-# 100,000 kwacha (inc100k).
+# Figure 9: pathway variables and dietary diversity. 'Income' is livestock income (livestock
+# sales revenue), log(1 + kwacha).
 # Data: plot_data/fig09_pathways_diets.csv (Stata: stata/02_regressions.do, block F)
 source("R/00_setup.R")
 
